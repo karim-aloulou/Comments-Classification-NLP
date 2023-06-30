@@ -10,8 +10,8 @@ import re
 
 
 # Chemins des fichiers XLSX
-file1 = '../resources/dev_labo/data/new/comment.xlsx'
-file2 = '../resources/dev_labo/data/products.xlsx'
+file1 = '../resources/common/data/comment.xlsx'
+file2 = '../resources/common/data/products.xlsx'
 file3 = '../resources/common/data/tun-names.xlsx'
 
 # Lecture des fichiers XLSX
