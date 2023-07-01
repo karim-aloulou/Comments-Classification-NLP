@@ -4,9 +4,11 @@ This repository contains a 6-week internship NLP project focused on classifying 
 
 ## Project Structure
 
-The project consists of two notebooks located in the `src` directory:
+The project consists of three notebooks located in the `src` directory:
 - `Data Preprocessing`: This notebook covers data cleaning tasks such as removing stop words and insignificant words, tokenization, lemmatization, and other preprocessing configurations.
-- `Modeling`: In this notebook, we have implemented several models to classify the comments using a semi-supervised approach.
+- `Data Modeling`: In this notebook, we have implemented several models to classify the comments using a semi-supervised approach.
+- `Data Visualization`: In this notebook, we discovred the least corrolated words with our targets, so that we removed them.
+
 
 The datasets used in the project are sourced from two files:
 - `new_comment`: This file contains the data for training and testing our models and includes a single feature, 'comment'.
