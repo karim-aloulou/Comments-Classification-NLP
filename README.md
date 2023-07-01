@@ -16,6 +16,36 @@ The datasets used in the project are sourced from two files:
 
 The cleaned data is stored in `ressources/common/CleanedData/cleaned_comments`, while the lemmatized comments are saved in `ressources/common/CleanedData/Lematized_Comments`. The final predictions (classification results) can be found in `ressources/common/data/comments_classification`.
 
+# Project Structure
+
+- Projet
+  - requirements.txt
+  - resources
+    - common
+      - CleanedData
+        - Lematized_Comments.xlsx
+        - Lematized_labled_data.xlsx
+        - cleaned_comments.xlsx
+      - data
+        - all_raw_comments_cleaning.xlsx
+        - new_comment.xlsx
+        - tun-names.xlsx
+        - labled_comments.xlsx
+        - products.xlsx
+    - dev_labo
+      - data
+        - new
+          - comment.xlsx
+        - processed
+          - comments_classification.xlsx
+  - src
+    - Data Modeling.ipynb
+    - Data Visualization.ipynb
+    - Data Preporcessing.ipynb
+    - process_new_comments.py
+
+
+
 ## Credits
  
 Internship Members: 
