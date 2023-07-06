@@ -10,7 +10,7 @@ import re
 
 
 # Chemins des fichiers XLSX
-file1 = '../resources/common/data/comment.xlsx'
+file1 = '../resources/dev_labo/data/new/comment.xlsx'
 file2 = '../resources/common/data/products.xlsx'
 file3 = '../resources/common/data/tun-names.xlsx'
 
@@ -56,29 +56,33 @@ def comment_to_list(comment):
 
 
 def replace_words(data, df):
-    dffirst_name['first_name'] = dffirst_name['first_name'].str.replace(' ', '').str.lower()  # éliminer les espaces et mettre en minuscules
-    dflast_name['last_name'] = dflast_name['last_name'].str.replace(' ', '').str.lower()  # éliminer les espaces et mettre en minuscules
-    dfproducts['products'] = dfproducts['products'].str.lower()  # mettre en minuscules
-    
+    dffirst_name['first_name'] = dffirst_name['first_name'].str.replace(' ', '').str.lower()
+    dflast_name['last_name'] = dflast_name['last_name'].str.replace(' ', '').str.lower()
+    dfproducts['products'] = dfproducts['products'].str.lower()
+
     for i, word in enumerate(data):
         if word.lower() in dffirst_name['first_name'].tolist() or word.lower() in dflast_name['last_name'].tolist():
             data[i] = 'prospect'
-        
+
         match = re.search(r'\b{}\b'.format(re.escape(word.lower())), ' '.join(dfproducts['products'].tolist()))
         if match:
             data[i] = 'produit'
-        
+
+        # Supprimer les mots spécifiques
+        if word.lower() == "c'est" or word.lower() == 'plus':
+            data[i] = ''
+
     # Réduire les occurrences consécutives de "produit" à une seule occurrence
     reduced_data = []
     prev_word = None
     for word in data:
         if word == 'produit' and prev_word == 'produit':
             continue  # Ignorer les mots consécutifs "produit"
-        reduced_data.append(word)
+        if word != '':
+            reduced_data.append(word)
         prev_word = word
-    
-    return reduced_data
 
+    return reduced_data
 
 # In[5]:
 
@@ -105,5 +109,3 @@ dfnew_comment
 
 # Écrir le DataFrame dans un fichier Excel
 dfnew_comment.to_excel('../resources/common/data/all_raw_comments_cleaning.xlsx', index=False)
-
-
