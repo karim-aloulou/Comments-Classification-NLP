@@ -4,9 +4,10 @@ This repository contains a 6-week internship NLP project focused on classifying 
 
 ## Project Structure
 
-The project consists of two notebooks located in the `src` directory:
+The project consists of three notebooks located in the `src` directory:
 - `Preprocessing_and_Modeling`: This notebook covers data cleaning tasks such as removing stop words and insignificant words, tokenization, lemmatization, and other preprocessing configurations. We have also implemented several models to classify the comments using a semi-supervised approach like XGBoost, LSTM, and Naive Bayes.
 - `Data Visualization`: In this notebook, we identified the least correlated words with our targets and removed them.
+- `Optimized`: In this notebook, we'll find an optimized code, were all work is done in some few functions.
 
 The datasets used in the project are sourced from two files:
 - `new_comment`: This file contains the data for training and testing our models and includes a single feature, 'comment'.
@@ -45,6 +46,7 @@ To correct predictions, add the correct prediction in the `manual_classification
     - Data Visualization.ipynb
     - Preprocessing_and_Modeling.ipynb
     - process_new_comments.py
+    - Optimized.ipynb
   - src/xgbmodel
     - word2vec.model
 
