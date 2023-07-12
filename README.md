@@ -10,7 +10,7 @@ The project consists of three notebooks located in the `src` directory:
 - `Optimized`: In this notebook, we'll find an optimized code, were all work is done in some few functions.
 
 The datasets used in the project are sourced from two files:
-- `new_comment`: This file contains the data for training and testing our models and includes a single feature, 'comment'.
+- `new_comment`: This file contains the data for training and testing our models and includes a single feature, 'comment'. new_comment is the the sum of all other files in All Comments directory.
 - `labled_data`: This file contains the pre-labled data with predicted scores. It includes the 'comment' feature and the corresponding 'score' label.
 
 The cleaned data is stored in `resources\dev_labo\data\processed\final_cleaned_Comments`. The final predictions (classification results) can be found in `resources\dev_labo\data\processed\Comments_Classification`.
@@ -37,11 +37,11 @@ To correct predictions, add the correct prediction in the `manual_classification
       - data
         - new
           - comment.xlsx
+          - All Comments
         - processed
           - Comments_Classification.xlsx
-          - cleaned_labled_data.xlsx
-          - cleaned_data.xlsx
           - final_cleaned_Comments.xlsx
+	  - merged_comments
   - src
     - Data Visualization.ipynb
     - Preprocessing_and_Modeling.ipynb

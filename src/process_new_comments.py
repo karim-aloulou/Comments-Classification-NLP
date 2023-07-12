@@ -6,7 +6,43 @@
 
 import pandas as pd
 import openpyxl
+import os
 import re
+import pandas as pd
+
+
+
+# Chemin du dossier source
+source_folder = '../resources/dev_labo/data/new/All Comments'
+
+# Chemin du fichier de destination
+dest_file = '../resources/dev_labo/data/new/comment.xlsx'
+
+# Initialiser une liste pour stocker toutes les données
+all_data = []
+
+# Parcourir tous les fichiers dans le dossier source
+for filename in os.listdir(source_folder):
+    # Si le fichier est un fichier Excel
+    if filename.endswith('.xlsx') or filename.endswith('.xls'):
+        # Lire les données dans le fichier
+        df = pd.read_excel(os.path.join(source_folder, filename))
+        
+        # Prendre la première colonne et convertir en DataFrame
+        df_single_column = pd.DataFrame(df.iloc[:, 0])
+        
+        # Renommer la colonne pour assurer la compatibilité lors de la concaténation
+        df_single_column.columns = ['comment']
+        
+        # Ajouter le dataframe à la liste
+        all_data.append(df_single_column)
+
+# Concaténer tous les dataframes
+merged_data = pd.concat(all_data, ignore_index=True)
+
+# Écrire toutes les données dans le fichier de destination
+merged_data.to_excel(dest_file, index=False)
+
 
 
 # Chemins des fichiers XLSX
