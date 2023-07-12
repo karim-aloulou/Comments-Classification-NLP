@@ -41,7 +41,7 @@ To correct predictions, add the correct prediction in the `manual_classification
         - processed
           - Comments_Classification.xlsx
           - final_cleaned_Comments.xlsx
-	  - merged_comments
+	      - merged_comments
   - src
     - Data Visualization.ipynb
     - Preprocessing_and_Modeling.ipynb
