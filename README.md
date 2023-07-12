@@ -2,7 +2,12 @@
 
 This repository contains a 6-week internship NLP project focused on classifying comments from medical representatives. The main objective is to categorize the comments into three classes: 'Client' if the mentioned doctor or pharmacist is a client and prescribes the medicine, 'Test' if the concerned person is still testing it, and 'Réclamation' if there are any claims or complaints.
 
-## Project Structure
+## How to run?
+1) Run the script process_new_comments.py (it will delete Doctors and Medicament names and will concat all comment files to comment.xls)
+2) Run the Notebook Data Visualization.ipynb (to get 600_mots_moins_freq.csv as output which are the least frequent correlated words with the targers)
+3) Run the Notebook Preprocessing_and_Modeling.ipynb (to clean the data and run the model LSTM chosen in our case result will be in Comments_Classification.xlsx)
+
+## The Project Overall 
 
 The project consists of three notebooks located in the `src` directory:
 - `Preprocessing_and_Modeling`: This notebook covers data cleaning tasks such as removing stop words and insignificant words, tokenization, lemmatization, and other preprocessing configurations. We have also implemented several models to classify the comments using a semi-supervised approach like XGBoost, LSTM, and Naive Bayes.
@@ -20,6 +25,7 @@ Next, run `Data Visualization.ipynb` to obtain the output file `600_mots_moins_f
 Finally, preprocess and train the data by running `Preprocessing_and_Modeling.ipynb`.
 
 To correct predictions, add the correct prediction in the `manual_classification` column in `Comments_Classification.xlsx`, and then run `Preprocessing_and_Modeling.ipynb` to correct the model predictions.
+
 
 ## Project Structure
 - Project
