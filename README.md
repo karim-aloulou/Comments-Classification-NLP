@@ -27,6 +27,8 @@ Finally, preprocess and train the data by running `Preprocessing_and_Modeling.ip
 To correct predictions, add the correct prediction in the `manual_classification` column in `Comments_Classification.xlsx`, and then run `Preprocessing_and_Modeling.ipynb` to correct the model predictions.
 
 
+!! Note that other models was put as commented because LSTM was the better to predict and no need to run others for better ressources management.
+
 ## Project Structure
 - Project
   - README.md
