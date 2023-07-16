@@ -40,33 +40,38 @@ To correct predictions, add the correct prediction in the `manual_classification
 !! Note that other models was put as commented because LSTM was the better to predict and no need to run others for better ressources management.
 
 ## Project Structure
-- Project
-  - README.md
-  - requirements.txt
-  - resources
+
+- README.md
+- requirements.txt
+- resources
     - common
-      - data
-        - 600_mots_moins_freq.csv
-        - labled_comments.xlsx
-        - tun-names.xlsx
-        - all_raw_comments_cleaning.xlsx
-        - products.xlsx
+        - data
+            - 600_mots_moins_freq.csv
+            - Comments_Classification.xlsx
+            - all_raw_comments_cleaning.xlsx
+            - final_cleaned_Comments.pkl
+            - final_cleaned_Comments.xlsx
+            - final_cleaned_labled_Comments.pkl
+            - labled_comments.xlsx
+            - products.xlsx
+            - tun-names.xlsx
     - dev_labo
-      - data
-        - new
-          - comment.xlsx
-          - All Comments
-        - processed
-          - Comments_Classification.xlsx
-          - final_cleaned_Comments.xlsx
-	      - merged_comments
-  - src
+        - data
+            - new
+                - All Comments
+                    - comment.xlsx
+                    - other.xlsx
+                - comment.xlsx
+            - processed
+                - merged_comments.xlsx
+- src
     - Data Visualization.ipynb
     - Preprocessing_and_Modeling.ipynb
+    - classify_new_clean_comments.py
+    - ingest_and_clean_new_comments.py
     - process_new_comments.py
-    - Optimized.ipynb
-  - src/xgbmodel
-    - word2vec.model
+    - xgbmodel
+        - word2vec.model
 
 ## Credits
 
