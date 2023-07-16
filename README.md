@@ -2,17 +2,26 @@
 
 This repository contains a 6-week internship NLP project focused on classifying comments from medical representatives. The main objective is to categorize the comments into three classes: 'Client' if the mentioned doctor or pharmacist is a client and prescribes the medicine, 'Test' if the concerned person is still testing it, and 'Réclamation' if there are any claims or complaints.
 
-## How to run?
+## How to run NOTEBOOKS?
 1) Run the script process_new_comments.py (it will delete Doctors and Medicament names and will concat all comment files to comment.xls)
 2) Run the Notebook Data Visualization.ipynb (to get 600_mots_moins_freq.csv as output which are the least frequent correlated words with the targers)
 3) Run the Notebook Preprocessing_and_Modeling.ipynb (to clean the data and run the model LSTM chosen in our case result will be in Comments_Classification.xlsx)
 
+## How to run Python Scripts?
+0) open terminal in project with python installed required
+1) pip install -r requirements.txt
+2) cd src
+3) python -m spacy download fr_core_news_sm
+4) run python ingest_and_clean_new_comments.py (it will do the preprocess)
+5) run python classify_new_clean_comments.py (it will predict with the LSTM model, the result will be in Comments_Classification.xlsx)
+
+
 ## The Project Overall 
 
-The project consists of three notebooks located in the `src` directory:
+The project consists of two notebooks located in the `src` directory:
 - `Preprocessing_and_Modeling`: This notebook covers data cleaning tasks such as removing stop words and insignificant words, tokenization, lemmatization, and other preprocessing configurations. We have also implemented several models to classify the comments using a semi-supervised approach like XGBoost, LSTM, and Naive Bayes.
 - `Data Visualization`: In this notebook, we identified the least correlated words with our targets and removed them.
-- `Optimized`: In this notebook, we'll find an optimized code, were all work is done in some few functions.
+
 
 The datasets used in the project are sourced from two files:
 - `new_comment`: This file contains the data for training and testing our models and includes a single feature, 'comment'. new_comment is the the sum of all other files in All Comments directory.
@@ -26,6 +35,7 @@ Finally, preprocess and train the data by running `Preprocessing_and_Modeling.ip
 
 To correct predictions, add the correct prediction in the `manual_classification` column in `Comments_Classification.xlsx`, and then run `Preprocessing_and_Modeling.ipynb` to correct the model predictions.
 
+!! Note that other models were put as commented because LSTM was the better to predict and no need to run others for better ressources management.
 
 ## Project Structure
 - Project
