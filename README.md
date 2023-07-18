@@ -37,6 +37,10 @@ To correct predictions, add the correct prediction in the `manual_classification
 
 !! Note that other models were put as commented because LSTM was the better to predict and no need to run others for better ressources management.
 
+## Project Architecture
+
+![Architecture](./assets/diagramme.png)
+
 
 ## Project Structure
 
