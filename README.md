@@ -39,7 +39,7 @@ To correct predictions, add the correct prediction in the `manual_classification
 
 ## Project Architecture
 
-![Architecture](./assets/diagram.png)
+![Architecture](./assets/diagramme.png)
 
 
 ## Project Structure
